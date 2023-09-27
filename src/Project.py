@@ -51,6 +51,28 @@ if navigation == "Home":
 
     st.write(predictions)
 
+    def Optimal_time_func(hours, predictions=predictions):
+
+        d={}
+        for i, pred in enumerate(predictions):
+            d[times.iloc[i]] = pred
+
+        sorted_d = sorted(d.items(), key=lambda x: x[1], reverse=True)
+        list=[]
+        for key, value in sorted_d.items():
+            list.append([key,value])
+
+        sell_times=[]
+        for i in range(hours):
+            sell_times.append(list[i])
+        
+        return sell_times
+
+    sell_times= Optimal_time_func(hours, predictions=predictions)
+
+
+    st.write(sell_times)
+
 elif navigation == "About":
     st.title("About the team")
     st.write("This page is created by Karen, Isabelle, Hallvard and Leo ")
