@@ -30,7 +30,7 @@ class CombineData:
         spot.index = pd.to_datetime(spot.index, format="%Y-%m-%d Kl. %H-%S")
         spot.index = spot.index.floor("H")
         spot.index = pd.to_datetime(spot.index)
-        self.spot_df = spot.resample('H').mean()
+        self.spot_df = spot.resample('H').sum()
 
     def weather(self):
         """Process the weather data."""
