@@ -61,11 +61,22 @@ st.set_page_config(
     page_title= "Electricity app",
     page_icon= "<3"
 )
+# Create a navigation bar using radio buttons
+navigation = st.sidebar.radio("Navigation", ["Home", "Page 1", "Page 2"])
 
-st.title("TEAM STREAM")
+# Page content based on navigation choice
+if navigation == "Home":
+    st.title("TEAM STREAM")
+    st.write("Welcome to the Home Page. This is the main page of the app.")
+    st.text("Hackathon Case 1 - Electricity Price Forecasting")
+    st.markdown("## Formål")
+    st.plotly_chart(fig)
 
-st.text("Hackathon Case 1 - Electricity Price Forecasting")
-st.markdown("## Formål")
+elif navigation == "Page 1":
+    st.title("Page 1")
+    st.write("This is Page 1. You can put your content here.")
+elif navigation == "Page 2":
+    st.title("Page 2")
+    st.write("This is Page 2. You can put different content here.")
 
 
-st.plotly_chart(fig)
