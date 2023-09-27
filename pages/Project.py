@@ -62,19 +62,18 @@ st.set_page_config(
     page_icon= "<3"
 )
 # Create a navigation bar using radio buttons
-navigation = st.sidebar.radio("Navigation", ["Home", "Page 1", "Page 2"])
+navigation = st.sidebar.radio("Navigation", ["Home", "Calculator", "About"])
 
 # Page content based on navigation choice
 if navigation == "Home":
-    st.image("wallpaperflare.com_wallpaper.jpg")
     st.title("TEAM STREAM")
-    st.write("Welcome to the Home Page. This is the main page of the app.")
+    st.write("Welcome to our Electricity Price Forecaster app")
     st.text("Hackathon Case 1 - Electricity Price Forecasting")
     st.markdown("## Formål")
     st.plotly_chart(fig)
 
 elif navigation == "Page 1":
-    st.title("Page 1")
+    st.title("Calulator")
     st.write("This is Page 1. You can put your content here.")
 elif navigation == "Page 2":
     st.title("Page 2")
