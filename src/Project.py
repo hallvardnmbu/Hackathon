@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objs as go
+import math
 
 from helpers.model import Model
 
@@ -36,7 +37,7 @@ if navigation == "Home":
     col1, col2 = st.columns(2)
     batteri_kap = col1.slider('Your battery in kWh', value=50, min_value=10, max_value=100)
     export_capacity = col2.slider('Export capasity kWh/h', min_value=10, max_value=100)
-    hours= round(batteri_kap/export_capacity, 2)
+    hours= math.ceil(batteri_kap/export_capacity)
 
     st.text(f'To empty your battery you must export for'
             f' {hours} hours')
@@ -53,4 +54,5 @@ if navigation == "Home":
 elif navigation == "About":
     st.title("About the team")
     st.write("This page is created by Karen, Isabelle, Hallvard and Leo ")
+
 
