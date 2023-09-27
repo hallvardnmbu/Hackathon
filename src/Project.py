@@ -57,7 +57,7 @@ if navigation == "Home":
         for i, pred in enumerate(predictions):
             d[times.iloc[i]] = pred
 
-        sorted_d = sorted(d.items(), key=lambda x: x[1], reverse=True)
+        sorted_d = dict(sorted(d.items(), key=lambda x: x[1], reverse=True))
         list=[]
         for key, value in sorted_d.items():
             list.append([key,value])
@@ -65,6 +65,20 @@ if navigation == "Home":
         sell_times=[]
         for i in range(hours):
             sell_times.append(list[i])
+        
+        times2=[]
+        for i in len(sell_times):
+            time= sell_times[i][0]
+            time=int(time[-7,-8])
+            times2.append(time)
+
+        times2=times2.sort()
+
+        intervals=[]
+
+        import pandas as pd
+        for _time in times2:
+            intervals.append((_time, _time + pd.Timedelta(1, "h")))
         
         return sell_times
 
