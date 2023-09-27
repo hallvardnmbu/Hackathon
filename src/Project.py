@@ -45,7 +45,7 @@ if navigation == "Home":
 
     with st.spinner("Loading predictions..."):
         model = Model("../data/combined_data.csv")
-        predictions_plot, predictions = model.predict(index=24)
+        predictions_plot, predictions, times = model.predict(index=24)
         st.plotly_chart(predictions_plot)
 
     st.write(predictions)

@@ -117,4 +117,4 @@ class Model:
         fig.update_xaxes(tickangle=45, tickformat='%Y-%m-%d %H:%M')
         fig.update_yaxes(title_text=self.price_area)
 
-        return fig, predictions
+        return fig, predictions, times
