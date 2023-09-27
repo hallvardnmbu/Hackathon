@@ -57,36 +57,58 @@ fig= datafunc("../test.csv",["Dato/klokkeslett","NO5"])
 ##Creating website
 
 
+
+
+
 st.set_page_config(
     page_title= "Electricity app",
     page_icon= "<3"
 )
 # Create a navigation bar using radio buttons
-navigation = st.sidebar.radio("Navigation", ["Home", "Calculator", "About"])
+navigation = st.sidebar.radio("Navigation", ["Home", "About"])
 
 # Page content based on navigation choice
 if navigation == "Home":
-    st.title("TEAM STREAM")
-    st.write("Hackathon Case 1 - Electricity Price Forecasting")
-    st.write("Welcome to our Electricity Price Forecaster app")
+    st.image("Teamstream.jpeg", width=700)
+
     
-    st.markdown("## Formål")
-    st.plotly_chart(fig)
+    
 
-elif navigation == "Calculator":
+    with st.expander("About the project"):
+
+        # Define the text you want to hide/show
+        hidden_text= ("""In the context of the global shift towards renewable energy sources and decentralized energy generation, 
+        there is a growing need for accurate forecasting of energy feed-in times and quantities. 
+        The goal of this project is to design
+        a predictive algorithm that determines optimal energy feed-in timings for individual power producers. 
+        By doing so, it enables investment banks to assess the financial implications and market dynamics 
+        of increased decentralized energy contributions to the grid."""
+        )
+
+        st.write(hidden_text)
+    
+    with st.expander("How to use"):
+
+        st.markdown("**Battery capacity, kWh**")
+        st.text("Enter the capacity of your battery")
+        st.markdown("**Export capacity**")
+        st.text("Enter how much power your battery can export per hour")
+
     st.title("Calulator")
-    st.title('Battery function')
+    
 
-    st.subheader('Battery capacity, kWh')
-    batteri_kap = st.slider('Choose the capacity for your battery', value= 50,min_value=10, max_value=100)
+    
+    batteri_kap = st.slider('Battery capacity, kWh', value= 50,min_value=10, max_value=100)
 
 
     st.text(f'Your battery holds a maximum capacity of {batteri_kap} kWh')
 
-    st.subheader('How much power can your battery export per hour?')
+  
     strøm_output = st.slider('Export capasity', min_value=10, max_value=100)
 
     st.text(f'You can export power for {round(batteri_kap/strøm_output, 2)} hours')
+
+    st.plotly_chart(fig)
 
 
 
