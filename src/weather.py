@@ -27,19 +27,11 @@ class WeatherData:
         self.client_id = client_id
         self.url = url
 
-    def save(self, path=None):
-        """
-        Fetch and save the data.
+        self.data = None
+        self.fetch()
 
-        Parameters
-        ----------
-        path : str, optional
-
-        Returns
-        -------
-        data : pd.DataFrame
-            The data if no path is given.
-        """
+    def fetch(self):
+        """Fetch weather data."""
         parameters = {
             'sources': ",".join(self.stations),
             'elements': self.elements,
@@ -49,10 +41,34 @@ class WeatherData:
         _response = requests.get(self.url, parameters, auth=(self.client_id, ''))
         response = _response.json()
 
-        data = pd.json_normalize(response['data'], record_path='observations',
-                                 meta=['sourceId', 'referenceTime'])
+        self.data = pd.json_normalize(response['data'], record_path='observations',
+                                      meta=['sourceId', 'referenceTime'])
 
-        if path is not None:
-            data.to_csv(path, index=False)
-            return
-        return data
+    def clean(self, remove=None):
+        """
+        Remove unnessecary columns of the data.
+
+        Parameters
+        ----------
+        remove : list, optional
+            List of columns to remove.
+
+        Notes
+        -----
+        The following columns are removed by default:
+        - timeSeriesId
+        - performanceCategory
+        - exposureCategory
+        - qualityCode
+        - level.unit
+        - level.levelType
+        - level.value
+        """
+        if remove is None:
+            remove = ["timeSeriesId", "performanceCategory", "exposureCategory",
+                      "qualityCode", "level.unit", "level.levelType", "level.value"]
+        self.data.drop(columns=remove, inplace=True)
+
+    def save(self, path):
+        """Save the data to a CSV file."""
+        self.data.to_csv(path, index=False)
