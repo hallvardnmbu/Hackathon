@@ -4,6 +4,7 @@ import plotly.graph_objs as go
 import math
 
 from helpers.model import Model
+from helpers.integral import plot_shading
 
 st.set_page_config(
     page_title= "Electricity app",
