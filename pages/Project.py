@@ -75,19 +75,18 @@ if navigation == "Home":
 
 elif navigation == "Calculator":
     st.title("Calulator")
-    st.title('Batteri funksjonalitet')
+    st.title('Battery funcksion')
 
-    st.subheader('Batterikapasitet, kWh')
-    batteri_kap = st.slider('Velg din batterikapasitet', value= 50,min_value=10, max_value=100)
+    st.subheader('Battery capacity, kWh')
+    batteri_kap = st.slider('Choose the capasity for your battery', value= 50,min_value=10, max_value=100)
 
 
+    st.text(f'Your battery holds a maximum capacity of {batteri_kap} kWh')
 
-    st.text(f'Ditt batteri inneholder maksimalt {batteri_kap}')
+    st.subheader('How much power can your battery export per houer?')
+    strøm_output = st.slider('Export capasity', min_value=10, max_value=100)
 
-    st.subheader('Hvor mye strøm kan ditt batteri eksportere per time?')
-    strøm_output = st.slider('Eksport kapasitet', min_value=10, max_value=100)
-
-    st.text(f'Du kan da eksportere strøm i {batteri_kap/strøm_output}')
+    st.text(f'You can then export power over {round(batteri_kap/strøm_output, 2)} houers')
 
 
 
