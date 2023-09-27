@@ -38,7 +38,7 @@ if navigation == "Home":
     st.title("Your battery")
 
     col1, col2 = st.columns(2)
-    batteri_kap = col1.slider('Your battery in kWh', value=50, min_value=10, max_value=100)
+    batteri_kap = col1.slider('Battery capasity in kWh', value=50, min_value=10, max_value=100)
     export_capacity = col2.slider('Export capasity kWh/h', min_value=10, max_value=100)
     hours = math.ceil(batteri_kap/export_capacity)
 
@@ -63,6 +63,7 @@ if navigation == "Home":
 
 elif navigation == "About":
     st.title("About the team")
-    st.write("This page is created by Karen, Isabelle, Hallvard and Leo ")
-
+    st.write("""This page is created by Karen, Isabelle, Hallvard and Leo. We are all NMBU students from different backrounds.
+             Hallvard and Leo major in Datasciense, Isabell major in environmental physics and Karen is majoring in Robotics. Togheter we
+             are team STREAM. """)
 
