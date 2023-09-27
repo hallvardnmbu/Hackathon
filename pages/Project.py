@@ -92,8 +92,8 @@ elif navigation == "Calculator":
 
 
 elif navigation == "About":
-    st.title("Page 2")
-    st.write("This is Page 2. You can put different content here.")
+    st.title("About the team")
+    st.write("This page is created by Karen, Isabelle, Hallvard and Leo ")
 
 
 
