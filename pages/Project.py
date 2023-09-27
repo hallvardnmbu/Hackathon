@@ -67,29 +67,33 @@ navigation = st.sidebar.radio("Navigation", ["Home", "Calculator", "About"])
 # Page content based on navigation choice
 if navigation == "Home":
     st.title("TEAM STREAM")
+    st.write("Hackathon Case 1 - Electricity Price Forecasting")
     st.write("Welcome to our Electricity Price Forecaster app")
-    st.text("Hackathon Case 1 - Electricity Price Forecasting")
+    
     st.markdown("## Formål")
     st.plotly_chart(fig)
 
-elif navigation == "Page 1":
+elif navigation == "Calculator":
     st.title("Calulator")
-    st.write("This is Page 1. You can put your content here.")
-elif navigation == "Page 2":
+    st.title('Batteri funksjonalitet')
+
+    st.subheader('Batterikapasitet, kWh')
+    batteri_kap = st.slider('Velg din batterikapasitet', value= 50,min_value=10, max_value=100)
+
+
+
+    st.text(f'Ditt batteri inneholder maksimalt {batteri_kap}')
+
+    st.subheader('Hvor mye strøm kan ditt batteri eksportere per time?')
+    strøm_output = st.slider('Eksport kapasitet', min_value=10, max_value=100)
+
+    st.text(f'Du kan da eksportere strøm i {batteri_kap/strøm_output}')
+
+
+
+elif navigation == "About":
     st.title("Page 2")
     st.write("This is Page 2. You can put different content here.")
 
-st.title('Batteri funksjonalitet')
 
-st.subheader('Batterikapasitet, kWh')
-batteri_kap = st.slider('Velg din batterikapasitet', value= 50,min_value=10, max_value=100)
-
-
-
-st.text(f'Ditt batteri inneholder maksimalt {batteri_kap}')
-
-st.subheader('Hvor mye strøm kan ditt batteri eksportere per time?')
-strøm_output = st.slider('Eksport kapasitet', min_value=10, max_value=100)
-
-st.text(f'Du kan da eksportere strøm i {batteri_kap/strøm_output}')
 
