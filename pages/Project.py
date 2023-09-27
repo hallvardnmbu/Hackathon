@@ -79,4 +79,17 @@ elif navigation == "Page 2":
     st.title("Page 2")
     st.write("This is Page 2. You can put different content here.")
 
+st.title('Batteri funksjonalitet')
+
+st.subheader('Batterikapasitet, kWh')
+batteri_kap = st.slider('Velg din batterikapasitet', value= 50,min_value=10, max_value=100)
+
+
+
+st.text(f'Ditt batteri inneholder maksimalt {batteri_kap}')
+
+st.subheader('Hvor mye strøm kan ditt batteri eksportere per time?')
+strøm_output = st.slider('Eksport kapasitet', min_value=10, max_value=100)
+
+st.text(f'Du kan da eksportere strøm i {batteri_kap/strøm_output}')
 
