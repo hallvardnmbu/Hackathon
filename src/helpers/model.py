@@ -106,15 +106,4 @@ class Model:
 
         predictions = model.predict(data)
 
-        fig = go.Figure()
-        fig.add_trace(
-            go.Scatter(x=times, y=predictions,
-                       name='Predicted'))
-        fig.add_trace(
-            go.Scatter(x=times, y=y,
-                       name='Actual',
-                       line={"dash": 'dash'}))
-        fig.update_xaxes(tickangle=45, tickformat='%Y-%m-%d %H:%M')
-        fig.update_yaxes(title_text=self.price_area)
-
-        return fig, predictions, times
+        return y, predictions, times
