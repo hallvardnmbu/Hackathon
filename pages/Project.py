@@ -66,6 +66,7 @@ navigation = st.sidebar.radio("Navigation", ["Home", "Page 1", "Page 2"])
 
 # Page content based on navigation choice
 if navigation == "Home":
+    st.image("wallpaperflare.com_wallpaper.jpg")
     st.title("TEAM STREAM")
     st.write("Welcome to the Home Page. This is the main page of the app.")
     st.text("Hackathon Case 1 - Electricity Price Forecasting")
