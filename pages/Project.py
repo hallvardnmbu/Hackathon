@@ -75,18 +75,18 @@ if navigation == "Home":
 
 elif navigation == "Calculator":
     st.title("Calulator")
-    st.title('Battery funcksion')
+    st.title('Battery function')
 
     st.subheader('Battery capacity, kWh')
-    batteri_kap = st.slider('Choose the capasity for your battery', value= 50,min_value=10, max_value=100)
+    batteri_kap = st.slider('Choose the capacity for your battery', value= 50,min_value=10, max_value=100)
 
 
     st.text(f'Your battery holds a maximum capacity of {batteri_kap} kWh')
 
-    st.subheader('How much power can your battery export per houer?')
+    st.subheader('How much power can your battery export per hour?')
     strøm_output = st.slider('Export capasity', min_value=10, max_value=100)
 
-    st.text(f'You can then export power over {round(batteri_kap/strøm_output, 2)} hours')
+    st.text(f'You can export power for {round(batteri_kap/strøm_output, 2)} hours')
 
 
 
