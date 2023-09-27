@@ -25,12 +25,13 @@ class CombineData:
 
     def spot(self):
         """Process the spot data."""
-        spot = pd.read_csv(self.spot_path, delimiter=";",
+        spot = pd.read_csv(self.spot_path, delimiter=";", decimal=",",
                            index_col=0, parse_dates=True)
         spot.index = pd.to_datetime(spot.index, format="%Y-%m-%d Kl. %H-%S")
         spot.index = spot.index.floor("H")
         spot.index = pd.to_datetime(spot.index)
-        self.spot_df = spot.resample('H').sum()
+        spot = spot.resample('H').sum()
+        self.spot_df = spot.astype(float)
 
     def weather(self):
         """Process the weather data."""
