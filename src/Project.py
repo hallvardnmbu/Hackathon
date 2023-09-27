@@ -53,6 +53,3 @@ elif navigation == "About":
     st.title("About the team")
     st.write("This page is created by Karen, Isabelle, Hallvard and Leo ")
 
-
-
-
