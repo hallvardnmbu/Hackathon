@@ -36,9 +36,10 @@ if navigation == "Home":
     col1, col2 = st.columns(2)
     batteri_kap = col1.slider('Your battery in kWh', value=50, min_value=10, max_value=100)
     export_capacity = col2.slider('Export capasity kWh/h', min_value=10, max_value=100)
+    hours= round(batteri_kap/export_capacity, 2)
 
     st.text(f'To empty your battery you must export for'
-            f' {round(batteri_kap/export_capacity, 2)} hours')
+            f' {hours} hours')
 
     st.title("When to export in the 'next' 24 hours")
 
