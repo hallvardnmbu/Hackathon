@@ -3,7 +3,7 @@ import pandas as pd
 
 
 class WeatherData:
-    def __init__(self, stations, elements, time, client_id, steps=1,
+    def __init__(self, stations, elements, time, client_id, steps=True,
                  url='https://frost.met.no/observations/v0.jsonld'):
         """
         Fetch weather data from the Frost API.
@@ -26,7 +26,7 @@ class WeatherData:
         self.client_id = client_id
         self.url = url
 
-        if steps == 1:
+        if not steps:
             self.data = self.fetch(time)
         else:
             start_date_str, end_date_str = time.split('/')
