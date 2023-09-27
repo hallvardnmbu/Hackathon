@@ -86,13 +86,14 @@ elif navigation == "Calculator":
     st.subheader('How much power can your battery export per houer?')
     strøm_output = st.slider('Export capasity', min_value=10, max_value=100)
 
-    st.text(f'You can then export power over {round(batteri_kap/strøm_output, 2)} houers')
+    st.text(f'You can then export power over {round(batteri_kap/strøm_output, 2)} hours')
 
 
 
 elif navigation == "About":
     st.title("About the team")
     st.write("This page is created by Karen, Isabelle, Hallvard and Leo ")
+
 
 
 
