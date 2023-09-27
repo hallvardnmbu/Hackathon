@@ -68,5 +68,4 @@ st.text("Hackathon Case 1 - Electricity Price Forecasting")
 st.markdown("## Formål")
 
 
-uploaded_file = st.file_uploader("Upload your file here")
 st.plotly_chart(fig)
