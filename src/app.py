@@ -1,7 +1,5 @@
-import streamlit as st
-import pandas as pd
-import plotly.graph_objs as go
 import math
+import streamlit as st
 
 from helpers.model import Model
 from helpers.integral import optimal_times, plot_shading
