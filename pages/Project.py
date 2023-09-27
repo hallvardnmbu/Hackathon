@@ -69,12 +69,12 @@ navigation = st.sidebar.radio("Navigation", ["Home", "About"])
 
 # Page content based on navigation choice
 if navigation == "Home":
-    st.image("Teamstream.jpeg", width=700)
+    st.image("bilde2.jpeg", width=700)
 
     
     
 
-    with st.expander("About the project"):
+    with st.expander("**About the project**"):
 
         # Define the text you want to hide/show
         hidden_text= ("""In the context of the global shift towards renewable energy sources and decentralized energy generation, 
@@ -86,25 +86,20 @@ if navigation == "Home":
         )
 
         st.write(hidden_text)
-    
-    with st.expander("How to use"):
-
-        st.markdown("**Battery capacity, kWh**")
-        st.text("Enter the capacity of your battery")
-        st.markdown("**Export capacity**")
-        st.text("Enter how much power your battery can export per hour")
+        
 
     st.title("Calulator")
     
 
     
-    batteri_kap = st.slider('Battery capacity, kWh', value= 50,min_value=10, max_value=100)
+    batteri_kap = st.slider('Enter your battery capacity, kWh', value= 50,min_value=10, max_value=100)
 
 
     st.text(f'Your battery holds a maximum capacity of {batteri_kap} kWh')
 
   
-    strøm_output = st.slider('Export capasity', min_value=10, max_value=100)
+    strøm_output = st.slider('Enter your export capasity, kWh', min_value=10, max_value=100)
+    
 
     st.text(f'You can export power for {round(batteri_kap/strøm_output, 2)} hours')
 
