@@ -12,8 +12,8 @@ the met.no-API. The code has been extremely generalized, allowing the user to sp
 weather stations, sensor data-types to fetch and time-periods to fetch data from. The object
 automatically divides the time-periods such that the requests are within the API's limits. The
 fetched data is then stored to a file if wanted. (We also found the spot price for all the price
-areas in Norway online and downloaded this directly.) An example can be found in the jupyter
-notebook `src/helpers/fetching.ipynb`.
+areas in Norway online and downloaded this directly – from www.forbrukerrådet.no/strompris/
+spotpriser.) An example can be found in the jupyter notebook `src/helpers/fetching.ipynb`.
 
 2. Data cleaning
 ----------------
@@ -44,6 +44,11 @@ the stored energy as well as the export capacity. This information is then used 
 time-periods within the next 24 hours to sell electricity to the grid. The website also shows the
 previously mentioned plot (see 4. Visualizing), and incorporates the modelling of the fetched data
 (see steps 1., 2. and 3.).
+
+To open the website
+-------------------
+Navigate to the `src/` directory and run the following command in the terminal:
+`streamlit run website.py`.
 
 Made by:
 --------

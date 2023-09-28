@@ -36,7 +36,6 @@ def plot_shading(spot, predictions, times, shading):
     fig = go.Figure()
 
     for shade in shading:
-        # interval = pd.date_range(shade[0], shade[1], freq="H")
         i, j = shade
         try:
             fig.add_trace(
