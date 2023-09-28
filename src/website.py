@@ -62,5 +62,5 @@ if navigation == "Home":
 elif navigation == "About":
     st.title("About the team")
     st.write("""This page is created by Karen, Isabelle, Hallvard and Leo. We are all NMBU students from different backrounds.
-             Hallvard and Leo major in Datasciense, Isabell major in environmental physics and Karen is majoring in Robotics. Togheter we
-             are team STREAM. """)
+             Hallvard and Leo are majoring in Data Science, Isabelle is majoring in environmental 
+             physics and Karen is majoring in Robotics. Togheter we are team STREAM. """)
