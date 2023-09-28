@@ -17,7 +17,7 @@ notebook `src/helpers/fetching.ipynb`.
 
 2. Data cleaning
 ----------------
-In the `src/helpers/combining.py` file, we have created an object that cleans the data fetched such
+In the `src/helpers/cleaning.py` file, we have created an object that cleans the data fetched such
 that it is representable. The object then combines the weather- and spot-data into a single table
 and either returns or saves this (whichever is specified by the user).
 
@@ -39,8 +39,8 @@ periods.
 
 5. Streamlit
 ------------
-In the `src/app.py` file, we have created a streamlit-website that allows the user to specify the
-stored energy as well as the export capacity. This information is then used to find the optimal
+In the `src/website.py` file, we have created a streamlit-website that allows the user to specify
+the stored energy as well as the export capacity. This information is then used to find the optimal
 time-periods within the next 24 hours to sell electricity to the grid. The website also shows the
 previously mentioned plot (see 4. Visualizing), and incorporates the modelling of the fetched data
 (see steps 1., 2. and 3.).

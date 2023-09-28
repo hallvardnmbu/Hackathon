@@ -2,7 +2,7 @@ import math
 import streamlit as st
 
 from helpers.model import Model
-from helpers.integral import optimal_times, plot_shading
+from helpers.plotting import optimal_times, plot_shading
 
 st.set_page_config(
     page_title= "Electricity app",
@@ -64,4 +64,3 @@ elif navigation == "About":
     st.write("""This page is created by Karen, Isabelle, Hallvard and Leo. We are all NMBU students from different backrounds.
              Hallvard and Leo major in Datasciense, Isabell major in environmental physics and Karen is majoring in Robotics. Togheter we
              are team STREAM. """)
-
