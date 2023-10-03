@@ -1,3 +1,4 @@
+import os
 import math
 import streamlit as st
 
@@ -13,7 +14,8 @@ navigation = st.sidebar.radio("Navigation", ["Home", "About"])
 model = None
 
 if navigation == "Home":
-    st.image("static/Teamstream.jpeg", width=700)
+    #st.image("static/Teamstream.jpeg", width=700)
+    st.write(os.listdir())
 
     with st.expander("About the project"):
         hidden_text = (
