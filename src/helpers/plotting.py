@@ -11,7 +11,10 @@ def optimal_times(hours, predictions, times):
     _sell_times = [k for k, v in _times.items()]
     sell_times = [pd.to_datetime(_sell_times[i]) for i in range(hours)]
 
-    intervals = [(_time, _time + pd.Timedelta(hours=1)) for _time in sell_times]
+    if times.iloc[0] not in sell_times:
+        intervals = [(_time - pd.Timedelta(hours=1), _time) for _time in sell_times]
+    else:
+        intervals = [(_time, _time + pd.Timedelta(hours=1)) for _time in sell_times]
 
     return intervals
 
@@ -57,5 +60,10 @@ def plot_shading(spot, predictions, times, shading):
                    line={"dash": 'dash', "color": "#FF6347"}))
     fig.update_xaxes(tickangle=45, tickformat='%Y-%m-%d %H:%M')
     fig.update_yaxes(title_text="NO2")
+
+    # Change y-axis to be close to the predicted values
+    y_max = max(data["predictions"]) * 1.2
+    y_min = min(data["predictions"]) * 0.7
+    fig.update_yaxes(range=[y_min, y_max])
 
     return fig
