@@ -13,7 +13,7 @@ navigation = st.sidebar.radio("Navigation", ["Home", "About"])
 model = None
 
 if navigation == "Home":
-    st.image("./_static/Teamstream.jpeg", width=700)
+    st.image("_static/Teamstream.jpeg", width=700)
 
     with st.expander("About the project"):
         hidden_text = (
