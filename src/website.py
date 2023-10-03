@@ -1,8 +1,8 @@
 import math
 import streamlit as st
 
-from helpers.model import Model
-from helpers.plotting import optimal_times, plot_shading
+from src.helpers.model import Model
+from src.helpers.plotting import optimal_times, plot_shading
 
 st.set_page_config(
     page_title= "Electricity app",
@@ -13,7 +13,7 @@ navigation = st.sidebar.radio("Navigation", ["Home", "About"])
 model = None
 
 if navigation == "Home":
-    st.image("_static/Teamstream.jpeg", width=700)
+    st.image("src/_static/Teamstream.jpeg", width=700)
 
     with st.expander("About the project"):
         hidden_text = (
