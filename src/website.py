@@ -1,4 +1,3 @@
-import os
 import math
 import streamlit as st
 
@@ -14,8 +13,7 @@ navigation = st.sidebar.radio("Navigation", ["Home", "About"])
 model = None
 
 if navigation == "Home":
-    # st.image("_static/Teamstream.jpeg", width=700)
-    st.write(os.listdir())
+    st.image("static/Teamstream.jpeg", width=700)
 
     with st.expander("About the project"):
         hidden_text = (
@@ -49,7 +47,7 @@ if navigation == "Home":
 
     with st.spinner("Loading predictions..."):
         if model is None:
-            model = Model("../data/combined_data.csv")
+            model = Model("data/combined_data.csv")
         y, predictions, times = model.predict(index=24)
 
     sell_times = optimal_times(hours, predictions, times)
