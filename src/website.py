@@ -1,3 +1,4 @@
+import os
 import math
 import streamlit as st
 
@@ -14,6 +15,7 @@ model = None
 
 if navigation == "Home":
     # st.image("_static/Teamstream.jpeg", width=700)
+    st.write(os.listdir())
 
     with st.expander("About the project"):
         hidden_text = (
